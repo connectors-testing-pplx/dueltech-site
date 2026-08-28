@@ -624,6 +624,111 @@
       max-width: 880px;
     }
 
+    /* Paisley spotlight — sibling of Calla, distinct accent (cool blue/violet) */
+    .paisley-spotlight {
+      position: relative;
+      grid-column: 1 / -1;
+      border: 1px solid rgba(129, 140, 248, 0.22);
+      border-radius: 22px;
+      background: var(--panel-2);
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .paisley-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: linear-gradient(180deg, #6366f1 0%, #818cf8 55%, #c7d2fe 100%);
+    }
+
+    .paisley-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #a5b4fc;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .paisley-spotlight h3 {
+      margin: 0 0 6px;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .paisley-sub {
+      margin: 0 0 18px;
+      color: #b8c1f5;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .paisley-spotlight p.body {
+      margin: 0 0 16px;
+      color: #c3cbdc;
+      font-size: 0.99rem;
+      max-width: 880px;
+    }
+
+    .paisley-spotlight p.body strong { color: #fff; }
+    .paisley-spotlight p.body code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      padding: 1px 6px;
+      border-radius: 5px;
+      background: rgba(129,140,248,0.10);
+      color: #dbe1ff;
+      border: 1px solid rgba(129,140,248,0.18);
+    }
+
+    .paisley-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 20px;
+    }
+    .paisley-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: #c7d2fe;
+      background: rgba(99,102,241,0.10);
+      border: 1px solid rgba(129,140,248,0.28);
+    }
+
+    .paisley-quote {
+      margin: 22px 0 0;
+      padding: 18px 22px;
+      border-left: 3px solid rgba(129,140,248,0.55);
+      border-radius: 0 14px 14px 0;
+      background: rgba(99,102,241,0.07);
+      color: #dbe1ff;
+      font-style: italic;
+      font-size: 1.02rem;
+      max-width: 880px;
+    }
+
+    .paisley-quote cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      opacity: 0.85;
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .product-grid,
@@ -858,7 +963,7 @@
                 </div>
                 <div class="worker-row">
                   <span class="status-dot ok" aria-hidden="true"></span>
-                  <span><strong>Paisley</strong> — runs on demand, purpose-built for deep signal validation.
+                  <span><strong>Paisley</strong> — on-demand deep signal validation, evidence-gated by a strict admission layer before anything is admitted for review.
                     <span class="worker-status ok">Operational</span></span>
                 </div>
                 <div class="worker-row">
@@ -904,6 +1009,63 @@
               "Calla is a systematic market-opportunity discovery system — a live-research engine plus
               an operator-governed evidentiary process — that evaluates software market candidates
               through a gated validation pipeline."
+            </blockquote>
+          </article>
+
+          <!-- Paisley spotlight -->
+          <article class="paisley-spotlight">
+            <span class="paisley-eyebrow">Worker Spotlight</span>
+            <h3>Paisley</h3>
+            <p class="paisley-sub">The on-demand signal validator</p>
+
+            <div class="paisley-meta">
+              <span class="paisley-tag">Node / TypeScript</span>
+              <span class="paisley-tag">AWS EC2</span>
+              <span class="paisley-tag">Evidence-gated</span>
+              <span class="paisley-tag">Shaped with Perplexity</span>
+            </div>
+
+            <p class="body">
+              Where Calla runs a continuous, ledgered research process, <strong>Paisley is the sharp,
+              on-demand counterpart</strong> — a purpose-built worker that takes a candidate opportunity
+              and asks a much narrower question: <em>is there real, specific pain here, or just noise
+              dressed up as a market?</em> It's a Node/TypeScript engine deployed on EC2, driven by
+              numbered session handoffs and a formal admission gate.
+            </p>
+
+            <p class="body">
+              The heart of Paisley lives in <code>src/engine/painSpecificity.ts</code>: an admit / park /
+              discard gate that scores each candidate on marker density, source quality, and specificity
+              before anything is allowed to advance. Sourcing itself is a <strong>six-angle sweep</strong> —
+              autonomous, search-driven discovery across complementary evidence angles — so a signal has
+              to survive from multiple directions, not just one lucky hit. Every tuning round is worked
+              on a disposable branch, validated with <code>tsc --noEmit</code> and the test suite,
+              diffed on the remote, and only then merged. Sharpening the engine is the whole job; the
+              gate is closed by default on purpose.
+            </p>
+
+            <p class="body">
+              Session-to-session, Paisley runs on a continuity pattern that's become a signature of the
+              Goose fleet: a <strong>HANDOFF close doc</strong> at the end of every round, a
+              <strong>Session Startup Protocol (SSP)</strong> to seed the next one, and a live
+              <code>control/ENGINE_STATUS.json</code> that any operator or worker can read to know
+              exactly where the engine stands. Paisley never guesses at prior state — it reads it.
+            </p>
+
+            <p class="body">
+              Calla was shaped, round after round, with Claude as the collaborating intelligence.
+              <strong>Paisley is being shaped with Perplexity</strong> — same doctrine of
+              evidence-gated validation, same discipline of disposable branches and plainly-reported
+              findings (including inconclusive and negative ones), but a different partner at the
+              other end of the loop. Two workers, two collaborators, one operator holding the ledger.
+            </p>
+
+            <blockquote class="paisley-quote">
+              "Paisley is a narrow, evidence-gated validator — a Node/TypeScript engine on EC2 with
+              a closed-by-default admission gate, a six-angle sourcing sweep, and a handoff-driven
+              continuity model — built to answer one question per candidate: is the pain real,
+              specific, and sourced, or should this die at the gate?"
+              <cite>— Paisley, shaped with Perplexity</cite>
             </blockquote>
           </article>
         </div>
