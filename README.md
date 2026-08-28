@@ -27,7 +27,7 @@ Project Goose is DuelTech's internal fleet of opportunity discovery workers. Eac
 
 | Worker | Status | Role |
 |---|---|---|
-| Chessa | Live — always on | Continuous live research with shadow review layer |
+| Chessa | In active development | Bounded opportunity-evidence research with an advisory shadow review layer |
 | Paisley | Live — on demand | Deep signal validation, Perplexity-operated |
 | Calla | In calibration | TBD |
 
