@@ -729,6 +729,111 @@
       opacity: 0.85;
     }
 
+    /* Aven spotlight — distinct emerald/cyan accent */
+    .aven-spotlight {
+      position: relative;
+      grid-column: 1 / -1;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 22px;
+      background: var(--panel-2);
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .aven-spotlight::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 3px;
+      background: linear-gradient(180deg, #10b981 0%, #06b6d4 55%, #a7f3d0 100%);
+    }
+
+    .aven-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #34d399;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .aven-spotlight h3 {
+      margin: 0 0 6px;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .aven-sub {
+      margin: 0 0 18px;
+      color: #6ee7b7;
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .aven-spotlight p.body {
+      margin: 0 0 16px;
+      color: #c3cbdc;
+      font-size: 0.99rem;
+      max-width: 880px;
+    }
+
+    .aven-spotlight p.body strong { color: #fff; }
+    .aven-spotlight p.body code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      padding: 1px 6px;
+      border-radius: 5px;
+      background: rgba(16,185,129,0.10);
+      color: #a7f3d0;
+      border: 1px solid rgba(16,185,129,0.22);
+    }
+
+    .aven-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 20px;
+    }
+    .aven-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: #a7f3d0;
+      background: rgba(16,185,129,0.10);
+      border: 1px solid rgba(16,185,129,0.28);
+    }
+
+    .aven-quote {
+      margin: 22px 0 0;
+      padding: 18px 22px;
+      border-left: 3px solid rgba(16,185,129,0.55);
+      border-radius: 0 14px 14px 0;
+      background: rgba(16,185,129,0.06);
+      color: #d1fae5;
+      font-style: italic;
+      font-size: 1.02rem;
+      max-width: 880px;
+    }
+
+    .aven-quote cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #34d399;
+      opacity: 0.85;
+    }
+
     @media (max-width: 980px) {
       .hero-grid,
       .product-grid,
@@ -972,10 +1077,15 @@
                     every source vetted, every run on the record.
                     <span class="worker-status ok">Operational</span></span>
                 </div>
+                <div class="worker-row">
+                  <span class="status-dot ok" aria-hidden="true"></span>
+                  <span><strong>Aven</strong> — operator-assisted discovery engine executing controlled live research cycles and compiling prioritized human-review digests.
+                    <span class="worker-status ok">Operational</span></span>
+                </div>
               </div>
             </div>
             <div class="goose-badge">
-              <span class="goose-badge-label">2 of 3 Operational</span>
+              <span class="goose-badge-label">3 of 4 Operational</span>
               <span class="goose-badge-sub">Not for sale.<br>Internal only.</span>
             </div>
           </article>
@@ -999,7 +1109,7 @@
               market-opportunity discovery process. The engine does the fetching and scoring, but the
               identity of the thing lives just as much in the doctrine wrapped around it: a formal
               decision ledger, numbered session handoffs, an admission gate that's closed by default,
-      a strict run budget, hard admissibility rules (engine-surfaced evidence counts;
+              a strict run budget, hard admissibility rules (engine-surfaced evidence counts;
               AI-side scouting doesn't), and a six-stage validation ladder. Strip those away and you'd
               have a web scraper with a scoring function. With them, you have a disciplined research
               instrument with a chain of custody for evidence.
@@ -1107,6 +1217,47 @@
               continuity model — built to answer one question per candidate: is the pain real,
               specific, and sourced, or should this die at the gate?"
               <cite>— Paisley, shaped with Perplexity</cite>
+            </blockquote>
+          </article>
+
+          <!-- Aven spotlight -->
+          <article class="aven-spotlight">
+            <span class="aven-eyebrow">Worker Spotlight</span>
+            <h3>Aven</h3>
+            <p class="aven-sub">The Operator-Assisted Discovery Engine</p>
+
+            <div class="aven-meta">
+              <span class="aven-tag">Node / TypeScript</span>
+              <span class="aven-tag">AWS EC2</span>
+              <span class="aven-tag">Operator-Gated Promotion</span>
+              <span class="aven-tag">Shaped with Gemini</span>
+            </div>
+
+            <p class="body">
+              While other fleet members operate on purely autonomous proof gates, <strong>Aven is built 
+              around human-in-the-loop operational velocity</strong>. Deployed on dedicated AWS EC2 
+              infrastructure, Aven executes controlled live research cycles across public registries, 
+              municipal portals, and B2B workflow documentation to surface real process bottlenecks.
+            </p>
+
+            <p class="body">
+              Aven's architecture balances safety with discovery: strict daily spend caps ($1/run, $3/day), 
+              instant kill switches, and fail-closed validation gates prevent unauthorized actions, 
+              while an automated digest tool compiles extracted entities, snippets, and workflow signals into 
+              readable operator reviews. Discovered leads are staged for manual operator promotion, enabling 
+              targeted business outreach without sacrificing governance.
+            </p>
+
+            <p class="body">
+              <strong>Aven is being shaped with Gemini</strong> — uniting rigorous evidentiary standards 
+              with practical operator tools to discover high-value market workflows with zero guesswork.
+            </p>
+
+            <blockquote class="aven-quote">
+              "Aven is an operator-assisted discovery instrument — combining bounded live research, 
+              fail-closed evidentiary safety, and human-authorized promotion to transform unstructured 
+              public workflow pain into verified business opportunities."
+              <cite>— Aven, shaped with Gemini</cite>
             </blockquote>
           </article>
         </div>
