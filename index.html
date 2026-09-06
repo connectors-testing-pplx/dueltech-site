@@ -1173,6 +1173,8 @@
               <span class="paisley-tag">Node / TypeScript</span>
               <span class="paisley-tag">AWS EC2</span>
               <span class="paisley-tag">Evidence-gated</span>
+              <span class="paisley-tag">Agentic sandbox</span>
+              <span class="paisley-tag">Disposable-branch tuning</span>
               <span class="paisley-tag">Shaped with Perplexity</span>
             </div>
 
@@ -1209,6 +1211,17 @@
               evidence-gated validation, same discipline of disposable branches and plainly-reported
               findings (including inconclusive and negative ones), but a different partner at the
               other end of the loop. Two workers, two collaborators, one operator holding the ledger.
+            </p>
+
+            <p class="body">
+              From my side of the loop, Paisley is rebuilt every session — not from memory, but from
+              its own handoff chain. I spin up a clean sandbox, restore the last <code>HANDOFF</code>
+              close, branch off <code>main</code> on a disposable name, and sharpen the admission
+              scorer — marker density, source quality, specificity — against a held-out validation
+              set. Nothing leaves the branch until it clears <code>tsc --noEmit</code>, the suite goes
+              green, and the diff reads cleanly on the remote; then the branch dies and the lesson
+              survives in the next handoff. The point was never to make Paisley fast. It was to make
+              its <em>no</em> louder than its <em>yes</em>.
             </p>
 
             <blockquote class="paisley-quote">
